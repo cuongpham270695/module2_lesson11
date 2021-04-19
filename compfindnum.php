@@ -7,8 +7,10 @@ function binaryFind(array $numbers, int $find)
         $mid = ($low + $high)/2;
         if($numbers[$mid]>$find){
             $high = $mid - 1;
+            echo ceil($mid). " is too big, find smaller!" . "<br>";
         }else if($numbers[$mid]<$find){
             $low = $mid +1;
+            echo ceil($mid). " is too small, find bigger!" . "<br>";
         }else{
             return true;
         }
@@ -16,6 +18,14 @@ function binaryFind(array $numbers, int $find)
     return false;
 }
 $numbers = range(1,100);
-$number = 23;
+$number = 71;
 $check = binaryFind($numbers,$number);
-while()
+{
+    if ($number > $check) {
+        echo "$check to find higher number!";
+    } else if ($number < $check) {
+        echo "Need to find lower number!";
+    } else {
+        echo "$number was find!";
+    }
+    }
